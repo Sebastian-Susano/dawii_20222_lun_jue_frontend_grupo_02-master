@@ -1,0 +1,66 @@
+<app-menu></app-menu>
+<div style="padding: 2%">
+        <form class="content" (submit)="registraLibro()">
+                <div class="submit-form" >
+        
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <h5>Registra Libro - Vargas Renzo</h5>
+                        </div>
+                    </div>
+
+
+
+                    <div class="row" style="margin-top: 3%">
+                        <div class="col-lg-6">
+                            <label for="titulo">Titulo</label>
+                            <input type="text" class="form-control" name="titulo" id="titulo" [(ngModel)] = "libro.titulo" />
+                        </div>
+                    
+                        <div class="col-lg-3">
+                            <label for="anio">Año</label>
+                            <input type="text" class="form-control" name="anio" id="anio" maxlength="4" [(ngModel)] = "libro.anio" />
+                        </div>
+        
+                        <div class="col-lg-3">
+                                <label for="serie">Serie</label>
+                                <input type="text" class="form-control" name="serie" id="serie" maxlength="12" [(ngModel)] = "libro.serie"  />
+                        </div>
+                 </div>
+          
+                <div class="row" style="margin-top: 3%">
+                <div class="col-lg-3">
+                    <label for="fechaRegistro">Fecha Registro</label>
+                    <input type="text"  class="form-control" id="fechaRegistro"  name="fechaRegistro" maxlength="45"  [(ngModel)] = "libro.fechaRegistro" />
+                </div>
+            
+                <div class="col-lg-3">
+                        <label for="edadMaxima">Estado</label>
+                        <input type="text" disabled="disabled" class="form-control" id="estado"  name="estado" maxlength="2" [(ngModel)] = "libro.estado"/>
+                </div>
+        
+                    <div class="col-lg-3">
+                        <label for="categoria">Categoria</label>
+                        <select  id="categoria" name="categoria" class="form-control" [(ngModel)] = "libro.categoria!.idCategoria" >
+                            <option value="-1"> [Seleccione] </option>   
+                            <option *ngFor="let aux of categorias" value="{{aux.idCategoria}}">
+                                {{aux.descripcion}}                    
+                            </option>
+                        </select>
+                    </div>
+                </div>
+          
+                <div class="row" style="margin-top: 3%"> 
+                        <div class="col-lg-12">
+                            <button class="btn btn-success"  >Enviar</button>
+                        </div>
+                </div>
+
+
+
+
+
+                
+                </div>
+        </form>
+</div>

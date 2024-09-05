@@ -1,0 +1,67 @@
+
+<app-menu></app-menu>
+<div style="padding: 2%">
+  
+
+        <form class="content" (ngSubmit)="inserta()">
+                <div class="submit-form" >
+        
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <h5 >Registro de Sala</h5>
+                        </div>
+                    </div>
+                    <div class="row" style="margin-top: 3%">
+                        <div class="col-lg-3">
+                            <label for="numero">Numero</label>
+                            <input type="text" class="form-control" name="numero" id="numero"  maxlength="4"[(ngModel)] = "objSala.numero" />
+                        </div>
+                        
+                    
+                        <div class="col-lg-3">
+                            <label for="piso">Piso</label>
+                            <input type="number" class="form-control" name="piso" id="piso" [(ngModel)] = "objSala.piso">
+                        </div>
+        
+                        <div class="col-lg-3">
+                                <label for="numAlumnos">Número de Alumnos</label>
+                                <input type="number" class="form-control" name="numAlumnos" id="numAlumnos" [(ngModel)] = "objSala.numAlumnos" />
+                        </div>
+                 </div>
+          
+                <div class="row" style="margin-top: 3%">
+                <div class="col-lg-3">
+                    <label for="recursos">Recursos</label>
+                    <input type="text"  class="form-control" id="recursos"  name="recursos" [(ngModel)] = "objSala.recursos"  />
+                </div>
+        
+                <div class="col-lg-2">
+                    <label for="id_act_estado">Estado</label>
+                    <select [(ngModel)]="objSala.estado"  name="estado" class="form-control">
+                        <option value="-1"> [Seleccione] </option>
+                        <option value="1"> Activo </option>
+                        <option value="0"> Inactivo </option>
+                    </select>
+                </div>
+        
+                    <div class="col-lg-3">
+                        <label for="sede">Sede</label>
+                        <select  id="sede" name="sede" class="form-control" [(ngModel)] = "objSala.sede!.idSede" >
+                            <option value="-1"> [Seleccione] </option> 
+                            <option *ngFor="let obj of lstSede" value="{{obj.idSede}}">
+                                {{obj.nombre}}
+                            </option> 
+                        </select>
+                    </div>
+                </div>
+                   
+                    <div class="row" style="margin-top: 3%"> 
+                        <div class="col-lg-12">
+                            <button class="btn btn-success"  >Enviar</button>
+                        </div>
+                </div>
+              </div>
+        </form>    
+
+
+</div>
